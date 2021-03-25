@@ -17,6 +17,11 @@
  * Define Global Variables
  *
 */
+var backgroundColor = section.css("background-color");
+var navbar = document.getElementsByClassName('navbar__menu');
+var navbarHeight = navbar.style.height;
+var position = navbar.offsetTop - navbarHeight;
+
 
 
 
@@ -36,22 +41,24 @@ function scrollPosition(el) {
     if (el.tagName == "BODY") {
       var yScroll = el.scrollTop || document.documentElement.scrollTop;
 
-      xPos += (el.offsetLeft - xScroll + el.clientLeft);
       yPos += (el.offsetTop - yScroll + el.clientTop);
     } else {
       // for all other non-BODY elements
-      xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
       yPos += (el.offsetTop - el.scrollTop + el.clientTop);
     }
 
     el = el.offsetParent;
   }
   return {
-    x: xPos,
     y: yPos
   };
 }
 
+window.addEventListener("scroll", updatePosition, false);
+
+function updatePosition() {
+  position = getPosition(myElement);
+};
 
 /**
  * End Helper Functions
