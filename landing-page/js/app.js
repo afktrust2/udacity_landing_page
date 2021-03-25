@@ -17,12 +17,10 @@
  * Define Global Variables
  *
 */
-var backgroundColor = section.css("background-color");
-var navbar = document.getElementsByClassName('navbar__menu');
-var navbarHeight = navbar.style.height;
-var position = navbar.offsetTop - navbarHeight;
-
-
+const nav = document.getElementsByClassName('navbar__list');
+const sectionList = document.getElementsByClassName('landing__container');
+const activeClass = "";
+let activeSection = document.getElementById('section1');
 
 
 /**
@@ -31,34 +29,9 @@ var position = navbar.offsetTop - navbarHeight;
  *
 */
 
-// This determines the position of the screen. Edited from
-// https://www.kirupa.com/html5/get_element_position_using_javascript.htm
-// to fit the need of the program
-function scrollPosition(el) {
-  var yPos = 0;
+function navbar() {
 
-  while (el) {
-    if (el.tagName == "BODY") {
-      var yScroll = el.scrollTop || document.documentElement.scrollTop;
-
-      yPos += (el.offsetTop - yScroll + el.clientTop);
-    } else {
-      // for all other non-BODY elements
-      yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-    }
-
-    el = el.offsetParent;
-  }
-  return {
-    y: yPos
-  };
 }
-
-window.addEventListener("scroll", updatePosition, false);
-
-function updatePosition() {
-  position = getPosition(myElement);
-};
 
 /**
  * End Helper Functions
