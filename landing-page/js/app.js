@@ -19,7 +19,7 @@
 */
 const nav = document.getElementsByClassName('navbar__list');
 const sectionList = document.getElementsByClassName('landing__container');
-const activeClass = "";
+const activeClass = "active";
 let activeSection = document.getElementById('section1');
 
 
@@ -29,9 +29,17 @@ let activeSection = document.getElementById('section1');
  *
 */
 
-function navbar() {
-
-}
+for (let i = 1; i <= sectionList.length; i++) {
+  var box = document.createElement('li');
+  box.setAttribute('id', '#nav' + i);
+  let navId = document.getElementById('#nav' + i);
+  var uList = document.createElement('a');
+  uList.classList.add('menu__link');
+  uList.setAttribute('href', '#section' + i);
+  uList.innerText = '#section' + i;
+  nav.appendChild(box);
+  entry.appendChild(uList);
+};
 
 /**
  * End Helper Functions
