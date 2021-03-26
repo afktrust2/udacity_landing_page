@@ -20,6 +20,7 @@
 const navbar = document.querySelector('#navbar__list');
 let sections = document.querySelector('section');
 
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -33,7 +34,7 @@ function viewport(box) {
      bounds.botton <= (window.innerheight) &&
      bounds.left >= 0 &&
      bounds.right <= (window.innerWidth)){
-       Return true
+       return true;
      }
 }
 
@@ -41,7 +42,7 @@ function viewport(box) {
 
 function disableSection() {
   sections.forEach((element) => {
-    element.classList.remove('your-active-class')
+    element.classList.remove('your-active-class');
   });
 }
 
@@ -53,7 +54,7 @@ function disableSection() {
 
 // Add class 'active' to section when near top of viewport
 function activeSection(section) {
-  section.classList.add('your-active-class')
+  section.classList.add('your-active-class');
 }
 
 /**
@@ -63,6 +64,29 @@ function activeSection(section) {
  */
 
 // Build navbar
+function buildNavbar() {
+    sections.forEach((element) => {
+        let listItem = document.createElement("li");
+        listItem.classList.add("navbar__list__item");
+        let sectionName = element.getAttribute("data-nav");
+        let currentId = element.getAttribute("id");
+        listItem.innerHTML = `<a href="#${currentId}" class="nav__hyperlink">${sectionName}</a>`;
+        navbarList.appendChild(listItem);
+    });
+}
+buildNavbar();
+// function makeNavBar() {
+//   sections.forEach((element) => {
+//     let list = document.createElement('li');
+//     list.classList.add('navbar__list__item');
+//     let sectionName = element.getAttribute('data-nav');
+//     let idName = element.getAttribute('id');
+//     list.innerHtml = '<a href="#${idName}" class="nav__hyperlink">${sectionName}</a>';
+//     navbar.appendChild(list);
+//   });
+// }
+//
+// makeNavBar();
 
 // Scroll to section on link click
 
