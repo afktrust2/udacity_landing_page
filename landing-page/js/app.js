@@ -17,14 +17,29 @@
  * Define Global Variables
  *
  */
+const navbar = document.querySelector('#navbar__list');
+let sections = document.querySelector('section');
 
 /**
  * End Global Variables
  * Start Helper Functions
  *
  */
+=
 
 //Function to check if an element is in viewport or not.
+function viewport(box) {
+  const bounds = box.getBoundingClientRect();
+  if (bounds.top >= -200 &&
+     bounds.botton <= (window.innerheight) &&
+     bounds.left >= 0 &&
+     bounds.right <= (window.innerWidth)){
+       Return true
+     }
+}
+
+
+
 
 //Function to remove active classes
 
