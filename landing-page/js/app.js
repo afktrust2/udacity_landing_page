@@ -25,7 +25,6 @@ let sections = document.querySelector('section');
  * Start Helper Functions
  *
  */
-=
 
 //Function to check if an element is in viewport or not.
 function viewport(box) {
@@ -38,10 +37,13 @@ function viewport(box) {
      }
 }
 
-
-
-
 //Function to remove active classes
+
+function disableSection() {
+  sections.forEach((element) => {
+    element.classList.remove('your-active-class')
+  });
+}
 
 /**
  * End Helper Functions
@@ -50,7 +52,9 @@ function viewport(box) {
  */
 
 // Add class 'active' to section when near top of viewport
-
+function activeSection(section) {
+  section.classList.add('your-active-class')
+}
 
 /**
  * End Main Functions
@@ -58,7 +62,7 @@ function viewport(box) {
  *
  */
 
-// Build menu
+// Build navbar
 
 // Scroll to section on link click
 
