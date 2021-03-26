@@ -17,17 +17,19 @@
  * Define Global Variables
  *
 */
-const nav = document.getElementsByClassName('navbar__list');
-const sectionList = document.getElementsByClassName('landing__container');
-const activeClass = "active";
+var nav = document.getElementById('navbar__list');
+var sectionList = document.getElementsByClassName('landing__container');
+var activeClass = "your-active-class";
 let activeSection = document.getElementById('section1');
 
 
 /**
  * End Global Variables
- * Start Helper Functions
+ * Begin Main Functions
  *
 */
+
+// build the nav
 
 for (let i = 1; i <= sectionList.length; i++) {
   var box = document.createElement('li');
@@ -36,22 +38,31 @@ for (let i = 1; i <= sectionList.length; i++) {
   var uList = document.createElement('a');
   uList.classList.add('menu__link');
   uList.setAttribute('href', '#section' + i);
-  uList.innerText = '#section' + i;
+  uList.innerText = 'Section' + i;
+  box.appendChild(uList);
   nav.appendChild(box);
-  entry.appendChild(uList);
 };
 
-/**
- * End Helper Functions
- * Begin Main Functions
- *
-*/
-
-// build the nav
-
-
-
 // Add class 'active' to section when near top of viewport
+let navActive = document.getElementById("nav1")
+
+for (let i = 1; i <= sectionList.length; i++) {
+  var navId = document.getElementById('nav' + i);
+  let sections = document.getElementById('section' + i);
+    navId.addEventListener('click', function(e) {
+      e.preventDefault();
+      sections.scrollIntoView();
+
+      navActive.classList.remove(activeClass);
+      navId.classLisst.add(activeClass);
+      navActive = navId;
+
+      var section = document.getElementById('section' + i);
+      activeSection.classList.remove(activeClass);
+      section.classList.add(activeClass);
+      activeSection = section;
+    });
+};
 
 
 // Scroll to anchor ID using scrollTO event

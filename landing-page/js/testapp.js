@@ -48,7 +48,7 @@ for (let i = 1; i <= trialData.length; i++) {
     trialA.innerText = `Section ${i}`;
     nav_ul.appendChild(entry);
     entry.appendChild(trialA);
-};
+}
 
 /*
 * the let navActive can only be set AFTER the navigation bar has been made, putting this
@@ -80,26 +80,26 @@ let sections = document.getElementById(`section${i}`);
         activeSection = section;
     });
 };
-
-/*
-* now the activeClassName can be changed while scrolling through the page as well
-*/
-window.addEventListener("scroll", function () {
-    for (let i = 1; i <= trialData.length; i++) {
-        let sections = document.getElementById(`section${i}`);
-        const navId = document.getElementById(`nav${i}`);
-        // let activeScroll = sections.getBoundingClientRect();
-
-        if (sections.getBoundingClientRect().top < window.innerHeight
-        && sections.getBoundingClientRect().bottom >=  50
-        && sections.getBoundingClientRect().top <= 50)
-        {
-        navId.classList.add(activeClassName);
-        sections.classList.add(activeClassName);
-
-         } else{
-        navId.classList.remove(activeClassName);
-        sections.classList.remove(activeClassName);
-    }
-    }
-});
+//
+// /*
+// * now the activeClassName can be changed while scrolling through the page as well
+// */
+// window.addEventListener("scroll", function () {
+//     for (let i = 1; i <= trialData.length; i++) {
+//         let sections = document.getElementById(`section${i}`);
+//         const navId = document.getElementById(`nav${i}`);
+//         // let activeScroll = sections.getBoundingClientRect();
+//
+//         if (sections.getBoundingClientRect().top < window.innerHeight
+//         && sections.getBoundingClientRect().bottom >=  50
+//         && sections.getBoundingClientRect().top <= 50)
+//         {
+//         navId.classList.add(activeClassName);
+//         sections.classList.add(activeClassName);
+//
+//          } else{
+//         navId.classList.remove(activeClassName);
+//         sections.classList.remove(activeClassName);
+//     }
+//     }
+// });
