@@ -10,6 +10,9 @@
 
 
 /* ---- Base Rules ---- */
+html{
+  scroll-behavior: smooth;
+}
 
 body {
     background: rgb(136,203,171);
@@ -87,6 +90,18 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+#navbar__list{
+  background: grey;
+}
+
+.nav__hyperlink{
+  color: white;
+}
+
+.navbar__list__item{
+  margin: 1rem;
 }
 
 /* Header Styles */
@@ -200,12 +215,12 @@ section.your-active-class {
 }
 
 section.your-active-class .landing__container::before {
-    opacity: 1;
+    opacity: 3;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
 section.your-active-class .landing__container::after {
-    opacity: 1;
+    opacity: 3;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
